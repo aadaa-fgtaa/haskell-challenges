@@ -26,6 +26,7 @@ materializeForcedBy f tree_ = unsafePerformIO do
       Fork l v r -> tagged ctag $ Fork (tagTree l) (tagged vtag v) (tagTree r)
 
     tree = tagTree tree_
+    {-# NOINLINE tree #-}
 
     isUnevaluated tag x = do
       writeIORef tag False
@@ -41,3 +42,4 @@ materializeForcedBy f tree_ = unsafePerformIO do
   void $ evaluate $ f tree
 
   trimTree tree
+{-# NOINLINE materializeForcedBy #-}
