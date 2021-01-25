@@ -1,5 +1,7 @@
 # `forceElems`
 
+This is a challenge to solve with Haskell. Check out the [readme of the whole project](../README.md) first if you haven't already.
+
 The following function "entangles" the elements of a list with its spine, so that whenever the outermost constructor gets forced, the head element also gets forced (unless the list is empty, in which case nothing extra happens):
 
 ```haskell
@@ -31,4 +33,4 @@ And there's a hardcore mode (turned off by default, change `hardcore = False` to
 
 Replace `forceElems = undefined` in [`src/Lib.hs`](src/Lib.hs) with an actual definition of `forceElems`.
 
-There's a small test suite, which I run with `stack test` (`cabal` should probably work as well, but I haven't checked).
+There's a small test suite. I run it with `stack test`.
